@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"/c/Program Files/Godot_v4.6-stable_win64.exe/Godot_v4.6-stable_win64_console.exe\" --headless --path . --quit-after 60)",
+      "Bash(\"C:\\\\Program Files\\\\Godot_v4.6-stable_win64.exe\\\\Godot_v4.6-stable_win64.exe\" --headless --path . --script tools/test_grid.gd)"
+    ]
+  }
+}

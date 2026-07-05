@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = 44.0
+text = "Wine Quality: 0"
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 1720.0
+offset_top = 20.0
+offset_right = 1900.0
+offset_bottom = 44.0
+horizontal_alignment = 2
+
+[node name="BuildModeIndicator" type="Label" parent="."]
+offset_left = 520.0
+offset_top = 20.0
+offset_right = 1400.0
+offset_bottom = 44.0
+horizontal_alignment = 1
+text = "BUILD PHASE - drag stations to place them, press ENTER to start the round"
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = 760.0
+offset_top = 960.0
+offset_right = 1160.0
+offset_bottom = 984.0
+horizontal_alignment = 1
+text = "Press E to interact"
+
+[node name="CarryLabel" type="Label" parent="."]
+offset_left = 660.0
+offset_top = 990.0
+offset_right = 1260.0
+offset_bottom = 1014.0
+horizontal_alignment = 1
+text = "Carrying: Finished Wine - deliver it to the King!"
+
+[node name="RoundOverPanel" type="Panel" parent="."]
+offset_left = 660.0
+offset_top = 390.0
+offset_right = 1260.0
+offset_bottom = 590.0
+
+[node name="RoundOverLabel" type="Label" parent="RoundOverPanel"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 180.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text = "Round Over"

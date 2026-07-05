@@ -1,0 +1,47 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/TileMapController.gd" id="2"]
+[ext_resource type="TileSet" path="res://resources/floor_tileset.tres" id="3"]
+[ext_resource type="Script" path="res://scripts/LevelBuilder.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/Wall.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/Barrel.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/Station.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/BubbleCatchMinigame.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="10"]
+[ext_resource type="Script" path="res://scripts/MinigameLayer.gd" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/WineBottle.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/KingTable.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/Counter.tscn" id="14"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+wine_bottle_scene = ExtResource("12")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3")
+script = ExtResource("2")
+
+[node name="LevelBuilder" type="Node2D" parent="."]
+script = ExtResource("4")
+wall_scene = ExtResource("5")
+barrel_scene = ExtResource("6")
+
+[node name="Station" parent="." instance=ExtResource("7")]
+position = Vector2(544, 416)
+minigame_scene = ExtResource("8")
+
+[node name="KingTable" parent="." instance=ExtResource("13")]
+position = Vector2(1312, 416)
+
+[node name="Counter" parent="." instance=ExtResource("14")]
+position = Vector2(800, 416)
+
+[node name="Player" parent="." instance=ExtResource("9")]
+position = Vector2(200, 700)
+
+[node name="MinigameLayer" type="CanvasLayer" parent="."]
+script = ExtResource("11")
+
+[node name="HUD" parent="." instance=ExtResource("10")]
